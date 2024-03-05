@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve Flask application
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/etc/nginx/sites-available/flask
+Environment="FLASK_APP=app.py"
+ExecStart=/home/ubuntu/.local/bin/gunicorn app:app -w 4 -b 0.0.0.0:8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
