@@ -7,7 +7,7 @@ In Linux, systemd is the standard system and service manager. This guide outline
 
 ### 1. Create a Service File:
 
-Open a text editor and create a new file with a .service extension, e.g., `yourapp.service`.
+Open a text editor and create a new file with a .service extension, e.g., `flask_app.service`.
 
 ### 2. Define Service Configuration:
 
@@ -56,7 +56,7 @@ Save the service file and exit the text editor.
 Move the service file to the systemd service directory, typically `/etc/systemd/system/`:
 
 ```bash
-sudo mv yourapp.service /etc/systemd/system/
+sudo mv flask_app.service /etc/systemd/system/
 ```
 
 ### 5. Reload systemd:
@@ -71,23 +71,23 @@ sudo systemctl daemon-reload
 
 - To start the service:
 ```bash
-sudo systemctl start yourapp
+sudo systemctl start flask_app
 ```
 - To stop the service:
 ```bash
-sudo systemctl stop yourapp
+sudo systemctl stop flask_app
 ```
 - To restart the service:
 ```bash
-sudo systemctl restart yourapp
+sudo systemctl restart flask_app
 ```
 - To enable the service to start on boot:
 ```bash
-sudo systemctl enable yourapp
+sudo systemctl enable flask_app
 ```
 - To disable the service from starting on boot:
 ```bash
-sudo systemctl disable yourapp
+sudo systemctl disable flask_app
 ```
 
 ### 7. View Service Status:
@@ -95,7 +95,7 @@ sudo systemctl disable yourapp
 You can view the status of your service using:
 
 ```bash
-sudo systemctl status yourapp
+sudo systemctl status flask_app
 ```
 
 Created a systemd service for application that can be easily managed with start, stop, restart, and enable/disable commands.
