@@ -97,4 +97,4 @@ You can view the status of your service using:
 sudo systemctl status yourapp
 ```
 
-That's it! You've successfully created a systemd service for your application that can be easily managed with start, stop, restart, and enable/disable commands.
+Created a systemd service for application that can be easily managed with start, stop, restart, and enable/disable commands.
