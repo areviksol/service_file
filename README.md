@@ -15,13 +15,14 @@ Inside the service file, configure your application using the following template
 
 ```plaintext
 [Unit]
-Description=Your Application Service
+Description=Gunicorn instance to serve Flask application
 After=network.target
 
 [Service]
-User=your_username
-Group=your_group
-ExecStart=/path/to/your/application/executable
+User=ubuntu
+WorkingDirectory=/etc/nginx/sites-available/flask
+Environment="FLASK_APP=app.py"
+ExecStart=/home/ubuntu/.local/bin/gunicorn app:app -w 4 -b 0.0.0.0:8000
 Restart=always
 
 [Install]
